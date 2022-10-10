@@ -181,6 +181,7 @@ namespace Sample.Test
             var money = "100000000000000000000000000000000000000000000000000000000.45";
 
             Assert.Throws<FormatException>(()=> money.ToStringMoneyPtBR());
+            //esse assert.throws é usado para fazer um teste onde você está esperando um erro já
         }
     }
 }
