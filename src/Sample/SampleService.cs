@@ -19,6 +19,7 @@ namespace Sample
         //eles ou a partir do total
         public decimal Sum(decimal total = 0, params decimal[] values)
         {
+
             var result = total;
             
             foreach (var item in values)

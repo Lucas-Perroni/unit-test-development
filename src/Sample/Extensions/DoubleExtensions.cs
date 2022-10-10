@@ -13,8 +13,6 @@ namespace Sample.Extensions
         public static bool ToStringMoneyPtBR(this string money)
         {
 
-            //todo = converter para numero
-
             var numero = decimal.Parse(money);
 
             

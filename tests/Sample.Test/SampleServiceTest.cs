@@ -19,7 +19,7 @@ namespace Sample.Test
         }
 
         [Fact]
-        public void IsSum_Values ()
+        public void IsSum_Values_ReturnTrue ()
         {
             //arrange
             var value1 = 5;
@@ -34,6 +34,26 @@ namespace Sample.Test
 
             //assert
             Assert.Equal(result1, result);
+        }
+
+        [Fact]
+        public void IsSum_Values_ReturnFalse()
+        {
+            
+                //arrange
+                var value1 = 5;
+                var value2 = 5;
+                var value3 = 5;
+                var total = 15;
+
+                var result1 = ;
+
+                //act
+                var result = _sampleService.Sum(total, value1, value2, value3);
+
+                //assert
+                Assert.Equal(result1, result);
+           
         }
         //-------------------------------------------------------------------------------
         [Theory]
@@ -151,14 +171,27 @@ namespace Sample.Test
         {
             var date = DateTime.Now;
 
-            var result = date.ToStringShortPtBR();
+           var result = date.ToStringShortPtBR();
 
-            Regex validateDateRegex = new Regex("^[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}$");
-            Match match = validateDateRegex.Match(result);
+           Regex validateDateRegex = new Regex("^[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}$");
+           Match match = validateDateRegex.Match(result);
 
-              Assert.True(match.Success);
+             Assert.True(match.Success);
            //   Assert.Throws(match.Success);
         }
+
+        //[Fact]
+        //public void IsDateValid_ReturnFalse()
+        //{
+        //    var date = "2022-05-02";
+
+        //    var result = date.ToStringShortPtBR();
+
+        //    Regex validateDateRegex = new Regex("^[0-9]{1,2}\\/[0-9]{1,2}\\/[0-9]{4}$");
+        //    Match match = validateDateRegex.Match(result);
+
+        //    Assert.True(match.Success);
+        //}
 
         //---------------------------------------------------------------------------------------
         [Theory]

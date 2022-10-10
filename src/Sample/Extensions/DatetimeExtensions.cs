@@ -7,9 +7,11 @@ namespace Sample.Extensions
 {
    public static class DatetimeExtensions
     {
+
+
         public static string ToStringShortPtBR(this DateTime date)
         {
-            return date.ToString("dd/mm/yyyy");
+            return ("dd/mm/yyyy");
         }
 
         public static string ToStringPtBR(this DateTime date)
