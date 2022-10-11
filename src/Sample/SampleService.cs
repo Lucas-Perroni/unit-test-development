@@ -9,9 +9,28 @@ namespace Sample
         //TODO: Criar um método que subtrai passando um total ou não e a partir do
         //segundo parâmetro podendo colocar varios números para realizar a subtração entre
         //eles ou a partir do total
-        public decimal Subtract(decimal total = 0, params decimal[] values)
+        public  bool Subtract(string value1, string value2)
         {
-            throw new NotImplementedException();
+
+            var numero1 = decimal.Parse(value1);
+            var numero2 = decimal.Parse(value2);
+
+            decimal total1;
+
+            total1 = numero1 - numero2;
+
+            if ( total1==0)
+            {
+                return true;
+            }
+            return false;
+
+
+            //foreach (var item in values)
+            //{
+            //    result -= item;
+            //}
+            //return result;
         }
 
         //TODO: Criar um método que soma passando um total ou não e a partir do

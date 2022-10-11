@@ -18,6 +18,37 @@ namespace Sample.Test
             _sampleService = new SampleService();
         }
 
+       //[Fact]
+       // public void IsSubtract_ReturnTrue()
+       // {
+       //     //arrange
+       //     var value1 = 5;
+       //     var value2 = 5;
+       //     var value3 = 10;
+       //     var total = 0;
+
+       //     var result1 = -20;
+
+       //     //act
+       //     var result = _sampleService.Subtract(total, value1, value2, value3);
+
+       //     //assert
+       //     Assert.Equal(result1, result);
+       // }
+
+
+        [Fact]
+        public void IsSubtract_ReturnFalse()
+        {
+            var value1 = "1000000000000000000000000000000000000000000000000000000000000000000000000000000";
+            var value2 = "2";
+            
+            //assert
+            Assert.Throws<OverflowException>(() => _sampleService.Subtract(value1, value2));
+        }
+
+
+        //------------------------------------------------------------------------------
         [Fact]
         public void IsSum_Values_ReturnTrue ()
         {
@@ -46,13 +77,13 @@ namespace Sample.Test
                 var value3 = 5;
                 var total = 15;
 
-                var result1 = ;
+                var result1 = 15;
 
                 //act
                 var result = _sampleService.Sum(total, value1, value2, value3);
 
                 //assert
-                Assert.Equal(result1, result);
+                Assert.NotEqual(result1, result);
            
         }
         //-------------------------------------------------------------------------------
